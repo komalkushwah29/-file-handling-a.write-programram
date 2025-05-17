@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.Scanner;
+public class Marksheet23 {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        FileWriter fw = new FileWriter("result.txt");
+        System.out.println("Enter your name:");
+        String name = sc.nextLine();
+        fw.write("Name: " + name + "\n");
+        System.out.println("1. Enter the marks of Chemistry:");
+        int a1 = sc.nextInt();
+        fw.write("Chemistry: " + a1 + "\n");
+        System.out.println("2. Enter the marks of Physics:");
+        int a2 = sc.nextInt();
+        fw.write("Physics: " + a2 + "\n");
+        System.out.println("3. Enter the marks of Computer:");
+        int a3 = sc.nextInt();
+        fw.write("Computer: " + a3 + "\n");
+        System.out.println("4. Enter the marks of Hindi:");
+        int a4 = sc.nextInt();
+        fw.write("Hindi: " + a4 + "\n");
+        System.out.println("5. Enter the marks of English:");
+        int a5 = sc.nextInt();
+        fw.write("English: " + a5 + "\n");
+        int total = a1 + a2 + a3 + a4 + a5;
+        double percentage = total / 5.0;
+
+        fw.write("Total: " + total + "\n");
+        fw.write("Percentage: " + percentage + "%\n");
+
+        if (percentage >= 90) {
+            fw.write("Grade: A\n");
+        } else if (percentage >= 80) {
+            fw.write("Grade: B\n");
+        } else if (percentage >= 70) {
+            fw.write("Grade: C\n");
+        } else if (percentage >= 60) {
+            fw.write("Grade: D\n");
+        } else {
+            fw.write("Grade: F\n");
+        }
+        fw.close();
+        sc.close();
+    }
+}
+
+
+
+
